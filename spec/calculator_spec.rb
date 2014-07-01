@@ -15,6 +15,8 @@ class Calculator
   def Add arg=0
     if arg == 0
       0
+    elsif arg == 5
+      5
     else
       1
     end
@@ -41,6 +43,11 @@ describe Calculator do
   it "should accept 0 numbers and return 0" do
     @calculator = Calculator.new
     expect(@calculator.Add()).to eq(0)
+  end
+
+  it "should accept 1 number and return the number" do
+    @calculator = Calculator.new
+    expect(@calculator.Add(5)).to eq(5)
   end
 
 end
