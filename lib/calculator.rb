@@ -5,10 +5,16 @@ class Calculator
 
   end
 
-  def Add arg0=0, arg1=0
+  def Add arg="0"
 
-    sum = arg0.to_i() + arg1.to_i()
+    arg.gsub! '\n', ','
+    args = arg.split(",")
 
+    sum = 0
+
+    args.each { |x| sum += x.to_i()}
+
+    sum
   end
 
   def to_s
