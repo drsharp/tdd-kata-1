@@ -26,28 +26,27 @@ end
 
 describe Calculator do
 
+  before do
+    @calculator = Calculator.new
+  end
+
   it "should instantiate and return true on string" do
-    # @calculator =
     expect(Calculator.new().to_s).to eq(true)
   end
 
-  it "should return an integer when Adding a string" do
-    @calculator = Calculator.new
+  it "should return an integer when adding a string" do
     expect(@calculator.Add("qwerty")).to eq(0)
   end
 
   it "should accept 0 numbers and return 0" do
-    @calculator = Calculator.new
     expect(@calculator.Add()).to eq(0)
   end
 
   it "should accept 1 number and return the number" do
-    @calculator = Calculator.new
     expect(@calculator.Add(5)).to eq(5)
   end
 
   it "should accept 2 numbers and return their sum" do
-    @calculator = Calculator.new
     expect(@calculator.Add(1,2)).to eq(3)
   end
 
