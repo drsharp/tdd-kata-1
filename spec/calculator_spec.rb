@@ -12,14 +12,10 @@ class Calculator
 
   end
 
-  def Add arg=0
-    if arg == 0
-      0
-    elsif arg == 5
-      5
-    else
-      1
-    end
+  def Add arg0=0, arg1=0
+
+    sum = arg0.to_i() + arg1.to_i()
+
   end
 
   def to_s
@@ -37,7 +33,7 @@ describe Calculator do
 
   it "should return an integer when Adding a string" do
     @calculator = Calculator.new
-    expect(@calculator.Add("qwerty")).to eq(1)
+    expect(@calculator.Add("qwerty")).to eq(0)
   end
 
   it "should accept 0 numbers and return 0" do
@@ -48,6 +44,11 @@ describe Calculator do
   it "should accept 1 number and return the number" do
     @calculator = Calculator.new
     expect(@calculator.Add(5)).to eq(5)
+  end
+
+  it "should accept 2 numbers and return their sum" do
+    @calculator = Calculator.new
+    expect(@calculator.Add(1,2)).to eq(3)
   end
 
 end
