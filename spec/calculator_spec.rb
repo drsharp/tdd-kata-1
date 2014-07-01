@@ -1,28 +1,15 @@
 # String Calculator
 
-# Create a simple String calculator with a method int Add(string numbers)
-# The method can take 0, 1 or 2 numbers, and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2”
+# 1. Create a simple String calculator with a method int Add(string numbers) - DONE
+# The method can take 0, 1 or 2 numbers, and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2” - DONE
+# Start with the simplest test case of an empty string and move to 1 and two numbers - DONE
+# Remember to solve things as simply as possible so that you force yourself to write tests you did not think about - THINK I DID
+# Remember to refactor after each passing test - HALF DONE, DIFFICULT AT BEGINNING WHEN LITTLE CODE TO REFACTOR,
+# POSSIBLY WAITED TOO LONG TO REFACTOR THE @calculator into before block
 
+# 2. Allow the Add method to handle an unknown amount of numbers
 
-#require 'calculator'
-
-class Calculator
-
-  def initialize
-
-  end
-
-  def Add arg0=0, arg1=0
-
-    sum = arg0.to_i() + arg1.to_i()
-
-  end
-
-  def to_s
-    true
-  end
-
-end
+require 'calculator'
 
 describe Calculator do
 
