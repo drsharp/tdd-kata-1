@@ -17,38 +17,34 @@ require 'calculator'
 
 describe Calculator do
 
-  before do
-    @calculator = Calculator.new
-  end
+  before(:all) { @calculator = Calculator.new }
 
-  it "should instantiate and return true on string" do
-    expect(Calculator.new().to_s).to eq(true)
+  it "should instantiate a new Calculator instance" do
+    expect(@calculator).to be_a_kind_of(Calculator)
   end
 
   it "should return an integer when adding a string" do
-    expect(@calculator.Add('qwerty')).to eq(0)
+    expect(@calculator.add('qwerty')).to eq(0)
   end
 
   it "should accept 0 numbers as a string and return 0" do
-    expect(@calculator.Add('')).to eq(0)
+    expect(@calculator.add('')).to eq(0)
   end
 
   it "should accept 1 number as a string and return the number" do
-    expect(@calculator.Add('5')).to eq(5)
+    expect(@calculator.add('5')).to eq(5)
   end
 
   it "should accept 2 numbers as a comma separated string and return their sum" do
-    expect(@calculator.Add('1,2')).to eq(3)
+    expect(@calculator.add('1,2')).to eq(3)
   end
 
   # This just worked due to the refactoring of the code to drive the above test - maybe should have not used split so soon?
   it "should accept multiple numbers as a comma separated string and reutrn their sum" do
-    expect(@calculator.Add('1,2,3,4,5,6,7,8,9,10')).to eq(55)
-    expect(@calculator.Add('1,2,3,4,5,6,7,8,9,10,11')).to eq(66) # Can I stack up tests like this if different examples for same test?
+    expect(@calculator.add('1,2,3,4,5,6,7,8,9,10,11')).to eq(66) # Can I stack up tests like this if different examples for same test?
   end
 
   it "should accept newlines between numbers in the string" do
-    expect(@calculator.Add('1\n2,3')).to eq(6)
-    expect(@calculator.Add('1\n2\n3')).to eq(6)
+    expect(@calculator.add('1\n2\n3')).to eq(6)
   end
 end
